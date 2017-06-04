@@ -1,0 +1,39 @@
+predicates:
+  Topic/1: closed
+  Author/1: closed
+  Discussion/1: closed
+  Post/1: closed
+  Quote/1: closed
+  Tag/1: closed
+  Stance/1 : closed
+  Quote_Stance/2: closed
+  Quote_Post/2: closed
+  Quote_Discussion/2: closed
+  Quote_Response/2: closed
+  Quote_Topic/2: closed
+  Quote_Author/2: closed
+  SVMTagging/2: closed
+  Tagging/2: open
+
+
+observations:
+  Topic : Topic.txt
+  Author : Author.txt
+  Discussion : Discussion.txt
+  Post : Post.txt
+  Quote : Quote.txt
+  Tag : Tag.txt
+  Quote_Stance : Quote_Stance.txt
+  Quote_Post : Quote_Post.txt
+  Quote_Discussion : Quote_Discussion.txt
+  Quote_Response : Quote_Response.txt
+  Quote_Topic : Quote_Topic.txt
+  Quote_Author : Quote_Author.txt
+  SVMTagging : SVMTagging.txt
+  Tagging : Tagging.txt
+
+targets: 
+  Lives : Tagging_targets.txt
+
+truth: 
+  Lives : Tagging_truth.txt

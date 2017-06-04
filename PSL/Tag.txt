@@ -1,0 +1,9 @@
+disagree
+agree
+emotion
+fact
+nasty
+nice
+attacking
+respectful
+sarcasm

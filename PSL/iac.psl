@@ -1,0 +1,22 @@
+Tagging(Q,"Agree") -> ~Tagging(Q,"Disagree").
+Tagging(Q,"Disagree") -> ~Tagging(Q,"Agree).
+Tagging(Q,"Respectful") -> ~Tagging(Q,"Attacking").
+Tagging(Q,"Attacking") -> ~Tagging(Q,"Respectful").
+Tagging(Q,"Fact") -> ~Tagging(Q,"Emotion").
+Tagging(Q,"Emotion") -> ~Tagging(Q,"Fact").
+Tagging(Q,"Nice") -> ~Tagging(Q,"Nasty").
+Tagging(Q,"Nasty") -> ~Tagging(Q,"Nice").
+
+: SVMTagging(Q,T) -> Tagging(Q,T)
+
+: Quote_Post(Q1,P) & Quote_Post(Q2,P) & Tagging(Q1,T) -> Tagging(Q2,T)
+: Quote_Author(Q1,A) & Quote_Author(Q2,A) & Tagging(Q1,T) -> Tagging(Q2,T)
+: Quote_Response(Q1,R) & Quote_Response(Q2,R) & Tagging(Q1,T) -> Tagging(Q2,T)
+: Quote_Topic(Q1,T) & Quote_Topic(Q2,T) & Tagging(Q1,T) -> Tagging(Q2,T)
+: Quote_Discussion(Q1,D) & Quote_Discussion(Q2,D) & Tagging(Q1,T) -> Tagging(Q2,T)
+: Quote_Discussion(Q1,P) & Quote_Discussion(Q2,P) & Quote_Stance(Q1,S) & Quote_Stance(Q2,S) & Tagging(Q1,T) -> Tagging(Q2,T)
+: Quote_Topic(Q1,T) & Quote_Topic(Q2,T) & Quote_Stance(Q1,S) & Quote_Stance(Q2,S) & Tagging(Q1,T) -> Tagging(Q2,T)
+
+: Knows(P1,P2) & Lives(P1,L) -> Lives(P2,L) ^2
+: Knows(P2,P1) & Lives(P1,L) -> Lives(P2,L) ^2
+: ~Lives(P,L) ^2
